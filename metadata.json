@@ -1,0 +1,6 @@
+{
+  "name": "Alcance Juazeiro Links",
+  "description": "Página de links oficiais (Linktree) para a igreja Alcance Juazeiro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

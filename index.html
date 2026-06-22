@@ -108,26 +108,27 @@
 
     .logo-container {
       position: relative;
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       margin-bottom: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #111111;
-      border-radius: 20px; /* Rounded box per minimal theme */
+      border-radius: 50%; /* Circular container */
       color: white;
       font-weight: 700;
       font-size: 12px;
       letter-spacing: 1px;
-      overflow: hidden;
     }
 
     .logo-img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      border-radius: 20px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #111111;
+      box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.08);
       transition: var(--transition);
     }
 
@@ -153,10 +154,12 @@
     }
 
     .church-subtitle {
-      font-size: 14px; /* Tamanho médio */
+      font-size: 13px; /* Tamanho médio e super legível */
       color: var(--text-gray);
-      font-weight: 400; /* Raleway 400 (Regular) */
-      margin-top: -8px;
+      font-weight: 500; /* Raleway 500 */
+      margin-top: 2px;
+      line-height: 1.5;
+      text-align: center;
     }
 
     /* BOTÕES DA LISTA */
@@ -306,6 +309,10 @@
       .container {
         width: 75%;
       }
+      .logo-container {
+        width: 150px;
+        height: 150px;
+      }
     }
 
     /* DESKTOP (769px mais largo) */
@@ -318,6 +325,10 @@
       }
       body {
         background-color: #ffffff;
+      }
+      .logo-container {
+        width: 180px;
+        height: 180px;
       }
     }
 
@@ -375,7 +386,7 @@
         <div id="logoFallback" class="logo-text-fallback">ALCANCE</div>
       </div>
       <h1 class="church-title">Alcance Juazeiro</h1>
-      <p class="church-subtitle">Uma igreja para pertencer</p>
+      <p class="church-subtitle">📖Domingo Celebração: 10h00 | 17h00 l 19h30<br>🔥Quarta Alcance Fire: 19h30</p>
     </header>
 
     <!-- Lista de Links -->

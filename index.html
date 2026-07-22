@@ -1,619 +1,380 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  
-  <!-- Título da Aba -->
-  <title>Alcance Juazeiro | Bio</title>
-  
-  <!-- Meta de Compartilhamento Social (Open Graph) -->
-  <meta property="og:title" content="Alcance Igreja | Links">
-  <meta property="og:description" content="Conecte-se com a Alcance Juazeiro. Acesse nossos canais de atendimento, localização, fotos, células, ministérios e redes sociais.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/public/logo-icon.png">
-  <meta property="og:site_name" content="Alcance Juazeiro">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Alcance Igreja | Links">
-  <meta name="twitter:description" content="Conecte-se com a Alcance Juazeiro. Acesse nossos canais de atendimento, localização, fotos e redes sociais.">
-  <meta name="twitter:image" content="/public/logo-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcance Juazeiro | Links</title>
+<meta name="description" content="Fé, comunidade e propósito em Juazeiro. Todos os canais da Igreja Alcance Juazeiro em um só lugar.">
 
-  <!-- Fontes do Google -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* RESET & VARS (Clean Utility / Minimal Design Theme - Raleway Typography) */
-    :root {
-      --bg-color: #FFFFFF;
-      --btn-color: #111111;
-      --btn-hover-color: #333333;
-      --text-light: #FFFFFF;
-      --text-dark: #111111;
-      --text-gray: #666666;
-      --font-sans: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --transition: all 0.2s ease-in-out;
-    }
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: {
+            DEFAULT: '#F6F1E8',
+            muted: '#C7BCAC',
+            faint: '#8B8073',
+          },
+          bg: {
+            DEFAULT: '#110D0B',
+            elevated: '#1C1512',
+            floating: '#271E19',
+          },
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Manrope"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
+<style>
+  :root {
+    color-scheme: dark;
+  }
 
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-dark);
-      font-family: var(--font-sans);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 20px 24px 20px;
-      overflow-x: hidden;
-    }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    /* CONTAINER PRINCIPAL */
-    .container {
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-grow: 1;
-    }
+  html, body {
+    background: #110D0B;
+  }
 
-    /* BOTÃO COMPARTILHAR (TOP-RIGHT) */
-    .share-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #f4f4f4;
-      border: none;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: var(--text-dark);
-      transition: var(--transition);
-      z-index: 10;
-    }
-    .share-btn:hover {
-      background: #e5e5e5;
-      transform: scale(1.05);
-    }
-    .share-btn:active {
-      transform: scale(0.95);
-    }
+  body {
+    font-family: 'Manrope', sans-serif;
+  }
 
-    /* CABEÇALHO (LOGO E NOME) */
-    .header {
-      text-align: center;
-      margin-bottom: 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
-    }
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
 
-    .logo-container {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #111111;
-      border-radius: 50%; /* Circular container */
-      color: white;
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
+  /* --- Atmosphere: layered radial gradients + grain --- */
+  .atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(50% 38% at 50% 0%, rgba(246,241,232,0.10) 0%, rgba(246,241,232,0) 100%),
+      radial-gradient(60% 40% at 85% 15%, rgba(246,241,232,0.06) 0%, rgba(246,241,232,0) 100%),
+      radial-gradient(55% 45% at 8% 85%, rgba(246,241,232,0.05) 0%, rgba(246,241,232,0) 100%),
+      #110D0B;
+  }
 
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #111111;
-      box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.08);
-      transition: var(--transition);
-    }
+  .grain {
+    position: fixed;
+    inset: -10%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
 
-    /* Fallback elegante caso a logo não carregue */
-    .logo-text-fallback {
-      display: none;
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: #FFFFFF;
-      text-transform: uppercase;
-    }
+  /* --- Load-in choreography --- */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .rise {
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .d1 { animation-delay: 0.05s; }
+  .d2 { animation-delay: 0.15s; }
+  .d3 { animation-delay: 0.25s; }
+  .d4 { animation-delay: 0.35s; }
+  .d5 { animation-delay: 0.42s; }
+  .d6 { animation-delay: 0.49s; }
+  .d7 { animation-delay: 0.56s; }
+  .d8 { animation-delay: 0.63s; }
+  .d9 { animation-delay: 0.70s; }
+  .d10 { animation-delay: 0.77s; }
+  .d11 { animation-delay: 0.84s; }
+  .d12 { animation-delay: 0.91s; }
+  .d13 { animation-delay: 0.98s; }
 
-    .church-title {
-      font-family: var(--font-sans);
-      font-size: 22px; /* Tamanho maior para título de destaque */
-      font-weight: 700; /* Raleway 700 (Bold) */
-      color: var(--text-dark);
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-    }
+  /* --- Logo halo --- */
+  .logo-ring {
+    position: relative;
+  }
+  .logo-ring::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(246,241,232,0.22) 0%, rgba(246,241,232,0) 72%);
+    animation: halo-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes halo-pulse {
+    0%, 100% { transform: scale(0.92); opacity: 0.6; }
+    50% { transform: scale(1.12); opacity: 1; }
+  }
 
-    .church-subtitle {
-      font-size: 18px; /* Tamanho médio e super legível */
-      color: var(--text-gray);
-      font-weight: 500; /* Raleway 500 */
-      margin-top: 2px;
-      line-height: 1.5;
-      text-align: center;
-    }
+  /* --- Link cards --- */
+  .link-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.045) 0%, rgba(255,255,255,0.015) 100%);
+    border: 1px solid rgba(246,241,232,0.10);
+    box-shadow:
+      0 1px 0 0 rgba(255,255,255,0.03) inset,
+      0 12px 24px -16px rgba(0,0,0,0.7);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+  }
+  .link-card:hover {
+    transform: translateY(-3px) scale(1.012);
+    border-color: rgba(246,241,232,0.24);
+    background: linear-gradient(180deg, rgba(255,255,255,0.075) 0%, rgba(255,255,255,0.025) 100%);
+    box-shadow:
+      0 1px 0 0 rgba(255,255,255,0.05) inset,
+      0 20px 32px -18px rgba(0,0,0,0.8);
+  }
+  .link-card:active {
+    transform: translateY(-1px) scale(0.99);
+  }
+  .link-card:focus-visible {
+    outline: none;
+    border-color: rgba(246,241,232,0.6);
+    box-shadow: 0 0 0 3px rgba(246,241,232,0.18);
+  }
 
-    /* BOTÕES DA LISTA */
-    .links-wrapper {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px; /* Set to 12px according to minimal design */
-      margin-bottom: 40px;
-    }
+  .link-card.featured {
+    border-color: rgba(246,241,232,0.24);
+    background: linear-gradient(180deg, rgba(255,255,255,0.095) 0%, rgba(255,255,255,0.03) 100%);
+  }
+  .link-card.featured:hover {
+    border-color: rgba(246,241,232,0.4);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -9px;
+    right: 16px;
+    background: #F6F1E8;
+    color: #110D0B;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    box-shadow: 0 6px 14px -6px rgba(0,0,0,0.7);
+  }
 
-    .link-btn {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      background-color: var(--btn-color);
-      color: var(--text-light);
-      text-decoration: none;
-      border-radius: 9999px; /* Pill shape */
-      padding: 14px 48px 14px 24px; /* Space on right for the arrow */
-      font-weight: 600; /* Raleway 600 (SemiBold) */
-      font-size: 13px; /* Tamanho proporcional de destaque */
-      line-height: 1.2;
-      letter-spacing: 0.8px; /* Letra-spacing leve de 0.8px */
-      text-transform: uppercase; /* Uppercase opcional de destaque */
-      transition: var(--transition);
-      border: 1px solid transparent;
-      user-select: none;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-    }
+  .icon-box {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(246,241,232,0.06);
+    border: 1px solid rgba(246,241,232,0.10);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+  }
+  .link-card:hover .icon-box {
+    transform: rotate(-6deg) scale(1.06);
+    background: rgba(246,241,232,0.10);
+  }
 
-    /* Ícones e textos internos */
-    .btn-emoji {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      margin-right: 12px;
-    }
+  .chevron {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .link-card:hover .chevron {
+    transform: translateX(3px);
+  }
 
-    .btn-text {
-      text-align: left;
-    }
+  /* --- Footer heart pulse --- */
+  @keyframes pulse-soft {
+    0%, 100% { transform: scale(1); opacity: 0.55; }
+    50% { transform: scale(1.12); opacity: 0.9; }
+  }
+  .pulse-soft {
+    animation: pulse-soft 2.6s ease-in-out infinite;
+  }
 
-    /* Seta de link externo */
-    .btn-arrow {
-      position: absolute;
-      right: 24px;
-      width: 16px;
-      height: 16px;
-      opacity: 0.8;
-      transition: var(--transition);
-    }
-
-    /* EFEITOS DE HOVER E ATIVO */
-    .link-btn:hover {
-      background-color: var(--btn-hover-color);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-    }
-
-    .link-btn:hover .btn-arrow {
-      opacity: 1;
-      transform: translate(2px, -2px);
-    }
-
-    .link-btn:active {
-      transform: translateY(0) scale(0.99);
-    }
-
-    /* REDES SOCIAIS (RODAPÉ VISUAL) */
-    .social-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .social-icon {
-      color: var(--text-dark);
-      opacity: 0.7;
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .social-icon:hover {
-      opacity: 1;
-      transform: scale(1.1) translateY(-1px);
-    }
-    .social-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* RODAPÉ COYPRIGHT */
-    .footer {
-      text-align: center;
-      width: 100%;
-      padding-top: 16px;
-      border-top: 1px solid #f0f0f0;
-      font-size: 11px; /* Tamanho pequeno */
-      font-weight: 300; /* Raleway 300 (Light) */
-      color: #888888;
-      letter-spacing: 0.02em;
-    }
-
-    /* TOAST DE NOTIFICAÇÃO (COPIADO COM SUCESSO) */
-    .toast {
-      position: fixed;
-      bottom: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #111111;
-      color: #FFFFFF;
-      padding: 12px 24px;
-      border-radius: 9999px;
-      font-size: 14px;
-      font-weight: 500;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
-    }
-    .toast.show {
-      bottom: 24px;
-    }
-
-    /* RESPONSIVIDADE E ADAPTAÇÃO */
-    
-    /* MOBILE-FIRST */
-    @media (max-width: 480px) {
-      .container {
-        width: 100%;
-      }
-      .link-btn {
-        padding: 14px 40px 14px 20px;
-      }
-    }
-
-    /* TABLET (481px a 768px) */
-    @media (min-width: 481px) and (max-width: 768px) {
-      .container {
-        width: 75%;
-      }
-      .logo-container {
-        width: 150px;
-        height: 150px;
-      }
-    }
-
-    /* DESKTOP (769px mais largo) */
-    @media (min-width: 769px) {
-      .container {
-        max-width: 480px;
-        background: #ffffff;
-        padding: 40px 0;
-        margin: 0 auto;
-      }
-      body {
-        background-color: #ffffff;
-      }
-      .logo-container {
-        width: 180px;
-        height: 180px;
-      }
-    }
-
-    /* ANIMAÇÃO DE ENTRADA (STAGGERED) */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-item {
-      opacity: 0;
-      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    /* Configuração dos tempos de delay */
-    .delay-0 { animation-delay: 80ms; }
-    .delay-1 { animation-delay: 140ms; }
-    .delay-2 { animation-delay: 200ms; }
-    .delay-3 { animation-delay: 260ms; }
-    .delay-4 { animation-delay: 320ms; }
-    .delay-5 { animation-delay: 380ms; }
-    .delay-6 { animation-delay: 440ms; }
-    .delay-7 { animation-delay: 500ms; }
-    .delay-header { animation-delay: 0ms; }
-    .delay-footer { animation-delay: 600ms; }
-  </style>
+  /* --- Divider --- */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(246,241,232,0) 0%, rgba(246,241,232,0.16) 50%, rgba(246,241,232,0) 100%);
+  }
+</style>
 </head>
-<body>
+<body class="text-ink antialiased min-h-screen relative">
 
-  <!-- Botão de Compartilhar Link -->
-  <button class="share-btn" id="shareBtn" title="Compartilhar página" aria-label="Compartilhar links">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="18" cy="5" r="3"></circle>
-      <circle cx="6" cy="12" r="3"></circle>
-      <circle cx="18" cy="19" r="3"></circle>
-      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-    </svg>
-  </button>
+  <div class="atmosphere"></div>
+  <svg class="grain" xmlns="http://www.w3.org/2000/svg">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+  </svg>
 
-  <div class="container">
-    
-    <!-- Topo da Página -->
-    <header class="header animate-item delay-header">
-      <div class="logo-container">
-        <!-- Tentativa de carregar /public/logo.png -->
-        <img src="/public/logo.png" id="churchLogo" class="logo-img" alt="ALCANCE" onerror="handleLogoError(this)" referrerPolicy="no-referrer">
-        <!-- Fallback de texto caso a logo não exista -->
-        <div id="logoFallback" class="logo-text-fallback">ALCANCE</div>
+  <main class="relative z-10 mx-auto w-full max-w-[440px] px-6 pt-16 pb-12 sm:pt-20">
+
+    <!-- Hero -->
+    <header class="flex flex-col items-center text-center mb-12">
+      <div class="logo-ring rise d1 mb-7">
+        <img
+          src="brand_assets/logo-alcance-jua.png"
+          alt="Alcance Juazeiro"
+          class="relative w-24 h-24 rounded-full object-cover shadow-[0_18px_40px_-12px_rgba(0,0,0,0.85)]"
+        >
       </div>
-      <h1 class="church-title">Alcance Juazeiro</h1>
-      <p class="church-subtitle">📖Domingo: 10h | 18H<br>🔥Quarta Alcance Fire: 19h30</p>
+
+      <span class="rise d2 inline-flex items-center gap-2 text-[11px] tracking-[0.22em] uppercase text-ink-faint mb-4">
+        <span class="w-1 h-1 rounded-full bg-ink-faint"></span>
+        Juazeiro · BA
+        <span class="w-1 h-1 rounded-full bg-ink-faint"></span>
+      </span>
+
+      <h1 class="rise d3 font-display text-[2.5rem] leading-[1.05] tracking-[-0.02em] font-medium mb-4">
+        Alcance<br>Juazeiro
+      </h1>
+
+      <div class="rise d4 flex flex-col items-center gap-1.5">
+        <p class="text-[14px] text-ink-muted">
+          <span class="text-ink font-semibold">Culto de Celebração</span> · dom, 10h e 18h
+        </p>
+        <p class="text-[14px] text-ink-muted">
+          <span class="text-ink font-semibold">Alcance Fire</span> · qua, 19h30
+        </p>
+      </div>
     </header>
 
-    <!-- Lista de Links -->
-    <main class="links-wrapper" id="linksList">
-      
-      <!-- 00. Aliançadas -->
-      <a href="https://tiketo.com.br/evento/5617" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-featured animate-item">
-        <span class="btn-emoji">🌹</span>
-        <span class="btn-text">CONFERÊNCIA ALIANÇADAS</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+    <!-- Links -->
+    <nav class="flex flex-col gap-3" aria-label="Links da igreja">
+
+      <a href="https://tiketo.com.br/evento/5617" target="_blank" rel="noopener noreferrer" class="link-card featured rise d5">
+        <span class="featured-badge">Inscrições abertas</span>
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4V8Z"/><path d="M13 8v8" stroke-dasharray="2.2 2.2"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Conferência Aliançadas</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Garanta sua inscrição para o evento</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 1. Entre em contato -->
-      <a href="https://api.whatsapp.com/send/?phone=%2B5574999273377&text=Ol%C3%A1%21+Gostaria+de+entrar+em+contato+com+a+Secretaria+Alcance&type=phone_number&app_absent=0" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-0">
-        <span class="btn-emoji">💬</span>
-        <span class="btn-text">Entre em contato</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://api.whatsapp.com/send/?phone=%2B5574999273377&text=Ol%C3%A1%21+Gostaria+de+entrar+em+contato+com+a+Secretaria+Alcance&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="link-card rise d6">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-4.1-1.05L4 20l1.1-4.2A8.4 8.4 0 0 1 3.5 11.5a8.5 8.5 0 0 1 17 0Z"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Entre em contato</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Fale com a secretaria pelo WhatsApp</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 2. Como chegar -->
-      <a href="https://share.google/CPkSrvh9WERH4aFXH" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-1">
-        <span class="btn-emoji">📍</span>
-        <span class="btn-text">Como chegar</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://share.google/CPkSrvh9WERH4aFXH" target="_blank" rel="noopener noreferrer" class="link-card rise d7">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Como chegar</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Veja o endereço e trace sua rota</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 3. Nossas fotos -->
-      <a href="https://www.flickr.com/photos/198690179@N03/albums/" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-2">
-        <span class="btn-emoji">📸</span>
-        <span class="btn-text">Nossas fotos</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://www.flickr.com/photos/198690179@N03/albums/" target="_blank" rel="noopener noreferrer" class="link-card rise d8">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="12" r="2.5"/><path d="M15 9.5h.01"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Nossas fotos</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Reviva os melhores momentos da igreja</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 4. Participe de uma célula -->
-      <a href="https://api.whatsapp.com/message/WUTUGYY6VIQYD1?autoload=1&app_absent=0" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-3">
-        <span class="btn-emoji">🙌</span>
-        <span class="btn-text">Participe de uma célula</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://api.whatsapp.com/message/WUTUGYY6VIQYD1?autoload=1&app_absent=0" target="_blank" rel="noopener noreferrer" class="link-card rise d9">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M4 19c0-3 2.5-5 5-5s5 2 5 5"/><path d="M14.5 14.2c2 .2 3.8 1.9 3.8 4.3"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Participe de uma célula</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Encontre uma comunidade perto de você</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 5. Alcance Social -->
-      <a href="https://api.whatsapp.com/send/?phone=5574988015138&text&type=phone_number&app_absent=0" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-4">
-        <span class="btn-emoji">🤝</span>
-        <span class="btn-text">Alcance Social</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://api.whatsapp.com/send/?phone=5574988015138&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="link-card rise d10">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8.2 3.2 5 6.4 5c2 0 3.4 1.1 4.1 2.2.2.3.6.3.8 0C12 6.1 13.4 5 15.4 5c3.2 0 4.9 3.2 3.7 6.3-1.8 4.6-9.1 9.2-9.1 9.2Z"/><path d="M8 3.5c1.2.5 2 1.6 2 3"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Alcance Social</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Ações sociais que transformam vidas</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 6. Alcance Academy -->
-      <a href="https://alcanceacademy.com/" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-5">
-        <span class="btn-emoji">🎓</span>
-        <span class="btn-text">Alcance Academy</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://alcanceacademy.com/" target="_blank" rel="noopener noreferrer" class="link-card rise d11">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5Z"/><path d="M6 10.7v4.3c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.3"/><path d="M22 8.5v6"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Alcance Academy</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Cursos e formação para o seu chamado</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 7. Torne-se um VOLTS -->
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkxMPuH-JbQ9U6S8PsJS0Orrgzt9Ob3Pntnidbz2FP2O0L0g/viewform" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-6">
-        <span class="btn-emoji">⚡</span>
-        <span class="btn-text">Torne-se um VOLTS</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkxMPuH-JbQ9U6S8PsJS0Orrgzt9Ob3Pntnidbz2FP2O0L0g/viewform" target="_blank" rel="noopener noreferrer" class="link-card rise d12">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.4 5.3 5.8.6-4.4 3.9 1.3 5.7L12 15l-5.1 3 1.3-5.7-4.4-3.9 5.8-.6L12 2.5Z"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Torne-se um VOLTS</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Sirva com seus dons e talentos</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 8. Nosso canal do YouTube -->
-      <a href="https://www.youtube.com/c/AlcanceJuazeiro" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="link-btn animate-item delay-7">
-        <span class="btn-emoji">▶️</span>
-        <span class="btn-text">Nosso canal do YouTube</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
+      <a href="https://www.youtube.com/c/AlcanceJuazeiro" target="_blank" rel="noopener noreferrer" class="link-card rise d13">
+        <span class="icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5l4.5 2.5-4.5 2.5v-5Z" fill="#F6F1E8" stroke="none"/></svg>
+        </span>
+        <span class="flex-1 min-w-0">
+          <span class="block font-semibold text-[15px] leading-tight">Nosso canal do YouTube</span>
+          <span class="block text-[13px] text-ink-faint mt-0.5">Assista aos cultos e mensagens</span>
+        </span>
+        <svg class="chevron flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B8073" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
       </a>
 
-      <!-- 📅 BOTÕES FUTUROS (INDICADORES DE EDIÇÃO FÁCIL):
-      Para adicionar um novo link ou botão no futuro, basta copiar, colar e ajustar as URLs e textos no bloco abaixo:
-      
-      <a href="https://SUA_OPCAO_OU_EVENTO.com" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-featured animate-item">
-        <span class="btn-emoji">🔥</span>
-        <span class="btn-text">Inscrições Evento / Banner</span>
-        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
-      -->
+    </nav>
 
-    </main>
-
-    <!-- Rodapé de Redes Sociais Alternativas -->
-    <div class="social-wrapper animate-item delay-footer">
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/c/AlcanceJuazeiro" target="_blank" rel="noopener noreferrer" class="social-icon" title="Visite nosso canal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.108C19.524 3.545 12 3.545 12 3.545s-7.525 0-9.387.51A3.003 3.003 0 0 0 .502 6.163C0 8.046 0 12 0 12s0 3.954.502 5.837a3.003 3.003 0 0 0 2.11 2.108c1.862.51 9.387.51 9.387.51s7.525 0 9.387-.51a3.003 3.003 0 0 0 2.11-2.108C24 15.954 24 12 24 12s0-3.954-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-      </a>
-      <!-- Instagram fallback (substitua a URL abaixo se houver URL do Insta) -->
-      <a href="https://www.instagram.com/alcancejuazeiro/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-        </svg>
-      </a>
-    </div>
-
-    <!-- Rodapé Copyright -->
-    <footer class="footer animate-item delay-footer">
-      <p>© <span id="year">2026</span> Alcance Juazeiro. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="mt-14 flex flex-col items-center gap-4">
+      <div class="divider w-full"></div>
+      <p class="text-[12px] text-ink-faint tracking-wide flex items-center gap-1.5">
+        Feito com
+        <svg class="pulse-soft" width="11" height="11" viewBox="0 0 24 24" fill="#F6F1E8"><path d="M12 21s-7-6.1-7-11.5a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8C21 14.9 12 21 12 21Z"/></svg>
+        pela Igreja Alcance Juazeiro
+      </p>
     </footer>
 
-  </div>
+  </main>
 
-  <!-- Componente de Toast -->
-  <div class="toast" id="shareToast">
-    <span>Copiado para a área de transferência!</span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>
-  </div>
-
-  <script>
-    // Configura o ano dinamicamente no footer
-    document.getElementById('year').textContent = new Date().getFullYear() || '2026';
-
-    // Gerenciamento de erro de Logo para Fallback gracioso
-    function handleLogoError(img) {
-      const srcAttr = img.getAttribute('src');
-      if (srcAttr === '/public/logo.png') {
-        img.src = '/logo.png';
-      } else if (srcAttr === '/logo.png') {
-        img.src = 'public/logo.png';
-      } else {
-        img.style.display = 'none';
-        document.getElementById('logoFallback').style.display = 'block';
-      }
-    }
-
-    // Funcionalidade do botão Compartilhar
-    const shareBtn = document.getElementById('shareBtn');
-    const toast = document.getElementById('shareToast');
-
-    shareBtn.addEventListener('click', async () => {
-      const currentUrl = window.location.href;
-      
-      // Tenta usar a Web Share API nativa se disponível em mobile
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: 'Alcance Igreja | Links',
-            text: 'Conecte-se com a Alcance Juazeiro!',
-            url: currentUrl
-          });
-          return;
-        } catch (err) {
-          // Fallback se cancelado ou com erro
-        }
-      }
-
-      // Fallback para cópia em Área de transferência
-      try {
-        await navigator.clipboard.writeText(currentUrl);
-        showToast();
-      } catch (err) {
-        // Fallback secundário
-        const dummyInput = document.createElement('input');
-        document.body.appendChild(dummyInput);
-        dummyInput.value = currentUrl;
-        dummyInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(dummyInput);
-        showToast();
-      }
-    });
-
-    function showToast() {
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
-    }
-  </script>
 </body>
 </html>
